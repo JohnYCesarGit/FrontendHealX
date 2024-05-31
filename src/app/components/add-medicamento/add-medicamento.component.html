@@ -1,0 +1,56 @@
+<div class="container" style=" display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+  <div class="card text-bg-light mb-3" style="max-width: 50rem;">
+    <div class="card-header">Añadir Medicamento</div>
+    <div class="card-body">
+      <div>
+        <form [formGroup]="formulario" (ngSubmit)="addMedicamento()">
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label>Nombre medicamento</label>
+                <input formControlName="nombremedicamento" class="form-control" placeholder="Nombre medicamento">
+                <span *ngIf="formulario.get('nombremedicamento')?.hasError('required') && formulario.get('nombremedicamento')?.touched" class="text-danger">El campo es <strong>obligatorio</strong></span>
+              </div>
+            </div>
+            <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="inputAddress">Marca</label>
+              <input formControlName="marca" type="text" class="form-control" placeholder="Marca">
+              <span *ngIf="formulario.get('marca')?.hasError('required') && formulario.get('marca')?.touched" class="text-danger">El campo es <strong>obligatorio</strong></span>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="inputAddress">Descripcion</label>
+              <input formControlName="descripcion" type="text" class="form-control" placeholder="Descripcion">
+              <span *ngIf="formulario.get('descripcion')?.hasError('required') && formulario.get('descripcion')?.touched" class="text-danger">El campo es <strong>obligatorio</strong></span>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputAddress">Stock</label>
+              <input formControlName="stock" type="number" class="form-control" placeholder="stock">
+              <span *ngIf="formulario.get('stock')?.hasError('required') && formulario.get('stock')?.touched" class="text-danger">El campo es <strong>obligatorio</strong></span>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputAddress2">Unidad de Medida</label>
+              <input formControlName="unidadmedida" type="text" class="form-control" placeholder="Unidad de Medida">
+              <span *ngIf="formulario.get('unidadmedida')?.hasError('required') && formulario.get('unidadmedida')?.touched" class="text-danger">El campo es <strong>obligatorio</strong></span>
+            </div>
+             </div>
+             
+             <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputAddress2">Precio</label>
+                <input formControlName="precio" type="number" class="form-control" placeholder="Precio">
+                <span *ngIf="formulario.get('precio')?.hasError('required') && formulario.get('precio')?.touched" class="text-danger">El campo es <strong>obligatorio</strong></span>
+              </div>
+              <div class="row mt-5 text-center">
+                <div class="col-lg-7">
+                  <button [routerLink]="['/list-medicamento']" routerLinkActive="router-link-active" type="button" class="btn btn-secondary btn-block ms-2">Volver</button>
+                </div>
+                <div class="col-lg-2">
+                  <button [disabled]="formulario.invalid" type="submit" class="btn btn-primary ms-2">Añadir</button>
+                </div>
+              </div>
+            </div>
+          </form>
+    </div>
+    </div>
+  </div>
+</div>

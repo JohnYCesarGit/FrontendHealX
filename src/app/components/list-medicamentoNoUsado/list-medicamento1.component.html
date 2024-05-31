@@ -1,0 +1,39 @@
+<div class="container">
+    <div>
+        <p>Lista personas</p>
+    </div>
+<div>
+    <a href="" class="btn btn-primary">Crear medicamento</a>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <th>Id Medicamento</th>
+            <th>Lote</th>
+            <th>Nombre Medicamento</th>
+            <th>Marca</th>
+            <th>Unidad de Medida</th>
+            <th>Precio del medicamento</th>
+            <th>Cantidad</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </thead>
+        <tbody>
+           <tr *ngFor="let medicamento of listaMedicamento">
+            <td>{{medicamento.idmedicamento}}</td>
+            <td>{{medicamento.lote}}</td>
+            <td>{{medicamento.nombremedicamento}}</td>
+            <td>{{medicamento.marca}}</td>
+            <td>{{medicamento.unidadmedida}}</td>
+            <td>{{medicamento.precio}}</td>
+            <td>{{medicamento.cantidad}}</td>
+            <td><a href="" class="btn btn-info">Editar</a></td>
+            <td><a href="" class="btn btn-warning">Eliminar</a></td>
+
+           </tr>
+        </tbody>
+
+
+    </table>
+</div>
+</div>
